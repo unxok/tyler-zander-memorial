@@ -5,7 +5,7 @@ export default function Home() {
 	return (
 		<div className='scroll-smooth'>
 			<Hero />
-			<div className='w-full flex flex-col items-center gap-4 bg-background'>
+			<div className='w-full flex flex-col items-center gap-4 bg-background px-2'>
 				<br />
 				<Card className='max-w-[70ch]'>
 					<CardHeader>
@@ -122,6 +122,9 @@ export default function Home() {
 						Stanley, Sylver, Jaspyr, Jayd and Myca Milton, Naima and Nathaniel
 						Parkhurst, Miguel Meza, Charlotte Camba, Courtney and Carson Houser.
 					</P>
+					<br />
+					<br />
+					<br />
 				</article>
 			</div>
 		</div>
@@ -136,7 +139,10 @@ const Hero = () => {
 				className={`w-full h-[50vh] bg-[url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] flex flex-col gap-1 justify-center items-center text-white font-[800] text-3xl bg-cover`}
 			>
 				<span className='font-["cursive"]'>In Loving Memory of</span>
-				<span className='font-["mono"]'>Tyler Zander Stanley-Camba</span>
+				<span className='font-["mono"] break-keep flex flex-wrap justify-center gap-[.5ch]'>
+					<span>Tyler Zander</span>
+					<span>Stanley-Camba</span>
+				</span>
 			</div>
 		</div>
 	);

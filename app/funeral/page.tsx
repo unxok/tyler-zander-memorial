@@ -11,8 +11,8 @@ import {
 export default function Page() {
 	//
 	return (
-		<div className='w-full flex justify-center'>
-			<div className='w-[70ch]'>
+		<div className='w-full flex justify-center px-2'>
+			<div className='max-w-[70ch]'>
 				<br />
 				<H2>Funeral Arrangements</H2>
 				<P>
