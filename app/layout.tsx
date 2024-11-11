@@ -5,6 +5,8 @@ import Link from "next/link";
 import { ComponentProps } from "react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
+import { ThemeProvider } from "@/components/ThemeProvider";
+import { ThemeToggle } from "@/components/ThemeToggle";
 
 const geistSans = localFont({
 	src: "./fonts/GeistVF.woff",
@@ -32,8 +34,15 @@ export default function RootLayout({
 			<body
 				className={`${geistSans.variable} ${geistMono.variable} antialiased`}
 			>
-				<Nav />
-				{children}
+				<ThemeProvider
+					attribute='class'
+					defaultTheme='system'
+					enableSystem
+					disableTransitionOnChange
+				>
+					<Nav />
+					{children}
+				</ThemeProvider>
 			</body>
 		</html>
 	);
@@ -42,17 +51,20 @@ export default function RootLayout({
 const Nav = () => {
 	//
 	return (
-		<div className='group'>
+		<div className='group sticky top-0 bg-background'>
 			<nav className='flex p-2 relative justify-between items-center'>
 				<Title />
-				<div className='flex gap-3 items-center'>
+				<div className='gap-3 items-center hidden md:flex'>
 					<NavLink href={"/"}>Obituary</NavLink>
 					<NavLink href={"/"}>Gallery</NavLink>
 					<NavLink href={"/"}>Funeral</NavLink>
 				</div>
-				<DonateButton />
+				<div className='flex justify-center items-center gap-1'>
+					<DonateButton />
+					<ThemeToggle />
+				</div>
 			</nav>
-			<hr className='w-[90%] mx-auto my-0 group-hover:scale-x-110 group-hover:border-foreground transition-all' />
+			<hr className='w-full mx-auto my-0 scale-x-0 group-hover:scale-x-100 border-foreground transition-all duration-500' />
 		</div>
 	);
 };

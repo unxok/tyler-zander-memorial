@@ -58,7 +58,7 @@ const config: Config = {
 			},
 		},
 		fontFamily: {
-			cursive: ["Meow Script", "cursive"],
+			cursive: ["cursive"],
 		},
 	},
 	plugins: [require("tailwindcss-animate")],
